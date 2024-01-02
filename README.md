@@ -1,6 +1,6 @@
 # news_app_ui_setup
 
-A new Flutter project.
+News app provides quick access to a variety of information and news around the world. The app displays news for 7 categories (general, sports, health, science, business, entertainment, technology) that you can choose between to see the category you want.
 
 ## Getting Started
 
