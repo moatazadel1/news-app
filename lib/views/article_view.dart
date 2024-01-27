@@ -2,11 +2,16 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class ArticleView extends StatelessWidget {
+class ArticleView extends StatefulWidget {
   final String url;
 
   const ArticleView({Key? key, required this.url}) : super(key: key);
 
+  @override
+  State<ArticleView> createState() => _ArticleViewState();
+}
+
+class _ArticleViewState extends State<ArticleView> {
   @override
   Widget build(BuildContext context) {
     WebViewController controller = WebViewController()
@@ -25,8 +30,9 @@ class ArticleView extends StatelessWidget {
           },
         ),
       )
-      ..loadRequest(Uri.parse(url));
-    log('URL: $url');
+      ..loadRequest(Uri.parse(widget.url));
+
+    log('URL: ${widget.url}');
     return Scaffold(
       body: WebViewWidget(
         controller: controller,
