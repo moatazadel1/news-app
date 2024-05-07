@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app_ui_setup/models/article_model.dart';
-import '../views/article_view.dart';
+import 'package:news_app_ui_setup/core/models/article_model.dart';
+import '../article_view.dart';
 
 class NewsTile extends StatelessWidget {
   const NewsTile({super.key, required this.articleModel});
@@ -50,7 +50,7 @@ class NewsTile extends StatelessWidget {
               height: 8,
             ),
             Text(
-              articleModel.subTitle!,
+              articleModel.subTitle ?? "No description available",
               maxLines: 2,
               style: const TextStyle(color: Colors.grey, fontSize: 14),
             )
